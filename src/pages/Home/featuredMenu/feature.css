@@ -1,0 +1,7 @@
+.feature-bg{
+    background-image: url('../../../assets/home/featured.jpg');
+    background-attachment: fixed;
+}
+.content-bg{
+    background-color: rgba(0, 0, 0, 0.5);
+}

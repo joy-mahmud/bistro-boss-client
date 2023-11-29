@@ -1,0 +1,6 @@
+.thumb-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
