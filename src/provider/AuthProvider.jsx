@@ -5,60 +5,60 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 const provider = new GoogleAuthProvider();
 
 export const AuthContext = createContext()
-const AuthProvider = ({children}) => {
-    const [user,setUser]=useState(null)
-    const [loading,setLoading]=useState(true)
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
     const axiosPublic = useAxiosPublic()
 
-    const createUser = (email,password)=>{
+    const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
-        
+
     }
 
-    const signIn =(email,password)=>{
-        
+    const signIn = (email, password) => {
+
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
-       
-        
+
+
     }
-    const googlesignIn = ()=>{
+    const googlesignIn = () => {
         setLoading(true)
-        return signInWithPopup(auth,provider)
+        return signInWithPopup(auth, provider)
     }
-    const logOut = ()=>{
+    const logOut = () => {
         setLoading(true)
-       return signOut(auth)
+        return signOut(auth)
     }
 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth,currentUser=>{
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
-            if(currentUser){
-            
-                const userInfo = {email:currentUser.email}
-                axiosPublic.post('/jwt',userInfo)
-                .then(res=>{
-                    // console.log(res.data.token)
-                    if(res.data.token){
-                        localStorage.setItem('access-token', res.data.token)
-                        setLoading(false)
-                    }
-                })
+            if (currentUser) {
+
+                const userInfo = { email: currentUser.email }
+                axiosPublic.post('/jwt', userInfo)
+                    .then(res => {
+                        // console.log(res.data.token)
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token)
+                            setLoading(false)
+                        }
+                    })
             }
-            else{
+            else {
                 localStorage.removeItem('access-token')
                 setLoading(false)
             }
-            
+
         })
-        return ()=>{
+        return () => {
             return unsubscribe();
         }
-    },[axiosPublic])
+    }, [axiosPublic])
 
-    const authInfo ={user,loading,createUser,signIn,logOut,googlesignIn}
+    const authInfo = { user, loading, createUser, signIn, logOut, googlesignIn }
 
     return (
         <AuthContext.Provider value={authInfo}>
