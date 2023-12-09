@@ -11,7 +11,7 @@
 - To create an account just simply go to the login page and sign in with google or just create an account through the signup page
 - To pay for any of the services ,just go to the cart page and then checkout with a valid card.
 
-  [Visit bistro boss restaurant](https://foodfun-5c49a.web.app/)
+  [Visit bistro boss restaurant](https://bistro-boss-6e041.web.app/)
 
 # Technologies used here:
 - Html 5
