@@ -9,9 +9,9 @@ const Dashboard = () => {
 
             {/* dashboard sidebar */}
 
-            <div className="w-64 h-screen bg-orange-400 p-4">
+            <div className="w-64 h-screen bg-orange-900 p-4 text-white">
                 <div className="uppercase w-full mb-5">
-                    <h2 className="text-3xl font-bold">Bistro boss</h2>
+                    <h2 className="text-3xl font-bold ">Bistro boss</h2>
                     <p className="text-xl font-medium">Restaurant</p>
                 </div>
                 <div>
@@ -30,9 +30,9 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to={'/dashboard/paymentHistory'} className="flex items-center gap-2"><FaPager /><p className="uppercase">Payment history</p></NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to={'/dashboard/manageBookings'} className="flex items-center gap-2"><FaBook /><p className="uppercase">Manage Bookings</p></NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink to={'/dashboard/allUsers'} className="flex items-center gap-2"><FaUsers /><p className="uppercase">All users</p></NavLink>
                                 </li>
@@ -43,36 +43,36 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to={'/dashboard/userHome'} className="flex items-center gap-2"><FaHome /><p className="uppercase">User home</p></NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to={'/dashboard/reservation'} className="flex items-center gap-2"><FaCalendar /><p className="uppercase">reservation</p></NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink to={'/dashboard/cart'} className="flex items-center gap-2"><FaShoppingCart /><p className="uppercase">My cart</p></NavLink>
                                 </li>
 
-                                <li>
+                                {/* <li>
                                     <NavLink to={'/dashboard/review'} className="flex items-center gap-2"><FaAd /><p className="uppercase">add review</p></NavLink>
-                                </li>
-                                <li>
+                                </li> */}
+                                {/* <li>
                                     <NavLink to={'/dashboard/booking'} className="flex items-center gap-2"><FaList /><p className="uppercase">My Bookings</p></NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink to={'/dashboard/contact'} className="flex items-center gap-2"><FaEnvelope /><p className="uppercase">contact</p></NavLink>
                                 </li>
 
                             </> : <>
-                                <li>
+                                {/* <li>
                                     <NavLink to={'/dashboard/userHome'} className="flex items-center gap-2"><FaHome /><p className="uppercase">User home</p></NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink to={'/dashboard/reservation'} className="flex items-center gap-2"><FaCalendar /><p className="uppercase">reservation</p></NavLink>
                                 </li>
                                 <li>
                                     <NavLink to={'/dashboard/cart'} className="flex items-center gap-2"><FaShoppingCart /><p className="uppercase">My cart</p></NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to={'/dashboard/review'} className="flex items-center gap-2"><FaAd /><p className="uppercase">add review</p></NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink to={'/dashboard/booking'} className="flex items-center gap-2"><FaList /><p className="uppercase">My Bookings</p></NavLink>
                                 </li>
